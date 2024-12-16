@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Listing Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>FAQS</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let x of faqs" [routerLink]="['/update', x._id]">
+          Question: {{x?.question}} <br>
+          Answer: {{x?.answer}}
+        </ion-item>
+       
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+ 
+  
+</ion-content>

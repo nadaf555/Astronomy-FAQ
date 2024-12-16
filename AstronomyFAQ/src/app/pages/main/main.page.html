@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Main Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label position="stacked" >Database Name</ion-label>
+    <ion-input type="text" [(ngModel)]="dbName" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Collection Name</ion-label>
+    <ion-input type="text" [(ngModel)]="collectionName"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="createDbCollection()" [disabled]="isDatabaseCreated">Create Database and Collection</ion-button>
+  <ion-button expand="block" (click)="presentActionSheetLoad()">Batch Load Items</ion-button>
+  <ion-button color="danger" expand="block" (click)="presentActionSheetDelete()">Delete All Items</ion-button>
+  
+ 
+</ion-content>

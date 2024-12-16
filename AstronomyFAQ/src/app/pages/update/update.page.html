@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Update Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+<ion-content [fullscreen]="true">
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>FAQS</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item >
+          Question: {{faqsInUpdatePage?.question}} <br>
+          Answer: {{faqsInUpdatePage?.answer}}
+        </ion-item>
+
+       
+      </ion-list>
+      <ion-button expand="block" (click)=displayUpdateItemsBlock()>Update This Item</ion-button>
+      <ion-button color="danger" expand="block" (click)="presentActionSheetDelete()" >Delete This Item</ion-button>
+     
+      <ion-list>
+        <ion-item >
+          {{deleteOneResponse}}
+        </ion-item>
+
+       
+      </ion-list>
+  
+    </ion-card-content>
+  </ion-card>
+   <ion-card id="update" color="primary">
+    <ion-card-header>
+      <ion-card-title>Updating The Item</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked" >Question</ion-label>
+        <ion-input type="text" [(ngModel)]="question" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Answer</ion-label>
+        <ion-input type="text" [(ngModel)]="answer"></ion-input>
+      </ion-item>
+      
+      <ion-button expand="block" (click)="presentActionSheetUpdate()">Update</ion-button>
+      <ion-list>
+       <ion-item>{{updateResponse}}</ion-item>
+      </ion-list>
+      
+  
+    </ion-card-content>
+   
+  </ion-card>
+  <ion-card id="update" color="primary">
+    <ion-card-header>
+      <ion-card-title>Add new item</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked" >Question</ion-label>
+        <ion-input type="text" [(ngModel)]="addQuestion" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Answer</ion-label>
+        <ion-input type="text" [(ngModel)]="addAnswer"></ion-input>
+      </ion-item>
+      <ion-button expand="block" (click)="presentActionSheetAdd()">Add</ion-button>
+      <ion-list>
+       <ion-item>{{addOneResponse}}</ion-item>
+      </ion-list>
+      
+      
+  
+    </ion-card-content>
+   
+  </ion-card>
+</ion-content>
